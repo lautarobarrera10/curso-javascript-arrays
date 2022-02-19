@@ -1,0 +1,26 @@
+{
+  "name": "curso-javascript-arrays",
+  "version": "1.0.0",
+  "description": "Curso de manipulación de arrays enJavaS\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D \u001b[C\u001b[DJavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lautarobarrera10/curso-javascript-arrays.git"
+  },
+  "keywords": [
+    "arrays",
+    "javascript\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D"
+  ],
+  "author": "Lautaro Barrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lautarobarrera10/curso-javascript-arrays/issues"
+  },
+  "homepage": "https://github.com/lautarobarrera10/curso-javascript-arrays#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
