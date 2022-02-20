@@ -44,13 +44,14 @@
             },
         ];
 
-        hamburguesas.forEach(hamburguesa => {
-            hamburguesasSection.innerHTML += 
+        const mappedHamburguesas = hamburguesas.map(hamburguesa => (            
             `<div class="hamburguesaTarjeta">
                 <img src="${hamburguesa.imageURL}" />
                 <p>${hamburguesa.name}</p>
             </div>`
-        });
+        ));
+
+        hamburguesasSection.innerHTML = mappedHamburguesas.join('');
      
         const buscador = document.getElementById('buscador');
 
