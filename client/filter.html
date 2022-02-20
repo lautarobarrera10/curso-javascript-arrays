@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburguesas</title>
+    <link rel="stylesheet" href="forEach.css">
+</head>
+<body>
+    <main id="main" class="main">
+        <h1>Hamburguesas</h1>
+        <input id="buscador" class="buscador" type="text" placeholder="Buscá tu hamburguesa preferida...">
+        <section id="hamburguesasSection" class="hamburguesasSection">
+
+        </section>
+    </main>
+    <script>
+        const hamburguesasSection = document.getElementById('hamburguesasSection');               
+
+        const hamburguesas = [
+            {
+                name: 'Hamburguesa',
+                kcal: 243,
+                price: 5,
+                imageURL: 'https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXEH2NW/200/200/original?country=ar'
+            },
+            {
+                name: 'Hamburguesa con queso',
+                kcal: 289,
+                price: 6,
+                imageURL: 'https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXUUJa7/200/200/original?country=ar'
+            },
+            {
+                name: 'McFiesta',
+                price: 7,
+                imageURL: 'https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXxkywA/200/200/original?country=ar'
+            },
+            {
+                name: 'BigMac',
+                kcal: 505,
+                price: 12,
+                imageURL: 'https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXUf0Vf/200/200/original?country=ar'
+            },
+        ];
+
+        hamburguesas.forEach(hamburguesa => {
+            hamburguesasSection.innerHTML += 
+            `<div class="hamburguesaTarjeta">
+                <img src="${hamburguesa.imageURL}" />
+                <p>${hamburguesa.name}</p>
+            </div>`
+        });
+     
+        const buscador = document.getElementById('buscador');
+
+        const buscarHamburguesa = busqueda => {
+            const value = busqueda.srcElement.value;
+            const lowerValue = value.toLowerCase();
+            const hamburguesasFiltradas = hamburguesas.filter(hamburguesa => {
+                const lowerName = hamburguesa.name.toLowerCase();
+                return lowerName.includes(lowerValue);
+            });
+            const mappedHamburguesas = hamburguesasFiltradas.map(hamburguesa => (            
+            `<div class="hamburguesaTarjeta">
+                <img src="${hamburguesa.imageURL}" />
+                <p>${hamburguesa.name}</p>
+            </div>`
+            ));
+
+            hamburguesasSection.innerHTML = mappedHamburguesas.join('');
+        }
+
+        buscador.addEventListener('input', buscarHamburguesa);
+
+    </script>
+</body>
+</html>
